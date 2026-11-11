@@ -1,0 +1,51 @@
+{
+  "name": "dsh-starmap",
+  "version": "0.3.0",
+  "private": true,
+  "description": "记忆星图：工作区当银心、对话当恒星、记忆当行星、子代理会话当卫星，各层公转的四层天体星图。只读，不写回记忆。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "icon": "assets/icon.svg",
+  "scripts": {
+    "test": "node tools/test-host.mjs",
+    "smoke": "node smoke.mjs",
+    "static": "node tools/build-static.mjs",
+    "preview": "node make-preview.mjs"
+  },
+  "files": [
+    "lib",
+    "assets",
+    "cordis.patch.yml",
+    "install-patch.mjs",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "memory",
+    "3d",
+    "graph",
+    "galaxy",
+    "orbit"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-connection"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-client-ui-slots": "^0.2.0-rc.1"
+  }
+}

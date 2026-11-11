@@ -1,0 +1,8 @@
+# dsh-starmap 的 bundle patch —— 把记忆星图插件挂进 DSH 配置树
+#
+# id 必须全局唯一且等于包名（插件管理器按它比对 entry id）；
+# 这一行不要写行尾注释，管理器用正则抓这一行的值。
+
+- insert:
+    - id: dsh-starmap
+      name: 'dsh-starmap'
